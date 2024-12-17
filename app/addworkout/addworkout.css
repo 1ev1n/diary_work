@@ -1,128 +1,179 @@
-/* DailyLog.module.css */
+/* Общие стили страницы */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #2D2D2D;
+  font-family: 'Jost', sans-serif;
+  color: #FFFFFF;
+}
 
 .container {
-    background-color: #2d2d2d;
-    margin: 0;
-    font-family: 'Jost', sans-serif;
-  }
-  
-  .title {
-    color: #fff;
-    text-align: center;
-  }
-  
-  .containerBackground {
-    padding: 20px;
-  }
-  
-  .newTrainHeader {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  .backArrow {
-    width: 30px;
-    height: 30px;
-  }
-  
-  .addGoal {
-    display: flex;
-    align-items: center;
-    margin-top: 10px;
-    color: #fff;
-    cursor: pointer;
-  }
-  
-  .scrollContainer {
-    max-height: 400px;
-    overflow-y: auto;
-  }
-  
-  .exerciseItem {
-    display: flex;
-    justify-content: space-between;
-    background-color: #444;
-    padding: 10px;
-    margin: 5px 0;
-    border-radius: 10px;
-  }
-  
-  .exerciseName {
-    color: #fff;
-  }
-  
-  .removeButton {
-    cursor: pointer;
-  }
-  
-  .addExercise {
-    display: flex;
-    align-items: center;
-    margin-top: 20px;
-    color: #fff;
-    cursor: pointer;
-  }
-  
-  .buttonsContainer {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 30px;
-  }
-  
-  .clearButton,
-  .saveButton {
-    padding: 10px 20px;
-    background-color: #6b0bfd;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .clearButton:hover,
-  .saveButton:hover {
-    background-color: #d400f1;
-  }
-  
-  /* Модальное окно */
-  .modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .modalContent {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    width: 300px;
-  }
-  
-  .modalContent input {
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-  }
-  
-  .saveButton {
-    background-color: #6b0bfd;
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-  }
-  
-  .saveButton:hover {
-    background-color: #d400f1;
-  }
-  
+  position: relative;
+  width: 1227px;
+  height: 2556px;
+  margin: 0 auto;
+  background: #2D2D2D;
+}
+
+/* Основной фон */
+.containerBackground {
+  position: absolute;
+  width: 1083px;
+  height: 1958px;
+  left: calc(50% - 1083px / 2);
+  top: calc(50% - 1958px / 2 + 119px);
+  background: #4D4D4D;
+  border-radius: 40px;
+}
+
+/* Градиентный фон внизу */
+.containerBackground::after {
+  content: '';
+  position: absolute;
+  width: 1083px;
+  height: 627px;
+  left: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, rgba(156, 6, 247, 0) 0%, rgba(156, 6, 247, 0.25) 70.4%, rgba(156, 6, 247, 0.5) 100%);
+  border-radius: 0px 0px 40px 40px;
+}
+
+/* Заголовок страницы */
+.title {
+  text-align: center;
+  font-size: 65px;
+  font-weight: 600;
+  margin: 20px 0;
+}
+
+.newTrainHeader {
+  display: flex;
+  align-items: center;
+  margin: 20px;
+}
+
+.backArrow {
+  width: 52px;
+  height: 52px;
+  cursor: pointer;
+}
+
+.date {
+  margin-left: 20px;
+  font-size: 32px;
+}
+
+/* Стили для кнопок "Добавить цель" и "Добавить упражнение" */
+.addGoal,
+.addExercise {
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+  cursor: pointer;
+  margin: 20px;
+}
+
+.addGoal img,
+.addExercise img {
+  width: 52px;
+  height: 52px;
+  margin-right: 10px;
+}
+
+/* Список упражнений */
+.exerciseList {
+  overflow-y: auto;
+  max-height: 600px;
+  margin: 20px;
+}
+
+.exerciseItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #6D6D6D;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  padding: 15px 20px;
+}
+
+.exerciseName {
+  font-size: 28px;
+}
+
+.removeButton img {
+  width: 52px;
+  height: 52px;
+  cursor: pointer;
+}
+
+/* Стили кнопок очистки и сохранения */
+.buttonsContainer {
+  display: flex;
+  justify-content: space-around;
+  margin: 50px 0;
+}
+
+.clearButton,
+.saveButton {
+  width: 944px;
+  height: 120px;
+  border-radius: 40px;
+  font-size: 40px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.clearButton {
+  background: rgba(255, 255, 255, 0.1);
+  border: 5px solid #FFFFFF;
+  color: #FFFFFF;
+}
+
+.saveButton {
+  background: #9C06F7;
+  color: #FFFFFF;
+}
+
+/* Модальное окно */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalContent {
+  background: #6D6D6D;
+  border-radius: 40px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.inputField {
+  width: 100%;
+  padding: 10px;
+  border: 3px solid #FFFFFF;
+  border-radius: 20px;
+  background: transparent;
+  color: #FFFFFF;
+  font-size: 18px;
+}
+
+.inputField::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Элементы с изображением "крест" */
+img[src*="cross.png"] {
+  width: 52px;
+  height: 52px;
+  cursor: pointer;
+}
