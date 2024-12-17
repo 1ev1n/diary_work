@@ -32,47 +32,47 @@ export default function Calendar() {
         </div>
         <div className="calendar-days">
           <Link href="/addworkout"><div className="not-current-m">25</div></Link>
-          <Link href={handleDayClick(26)}><div className="not-current-m">26</div></Link>
-          <Link href={handleDayClick(27)}><div className="not-current-m">27</div></Link>
-          <Link href={handleDayClick(28)}><div className="not-current-m">28</div></Link>
-          <Link href={handleDayClick(29)}><div className="not-current-m">29</div></Link>
-          <Link href={handleDayClick(30)}><div className="not-current-m">30</div></Link>
-          <Link href={handleDayClick(1)}><div>1</div></Link>
-          <Link href={handleDayClick(2)}><div>2</div></Link>
-          <Link href={handleDayClick(3)}><div>3</div></Link>
-          <Link href={handleDayClick(4)}><div>4</div></Link>
-          <Link href={handleDayClick(5)}><div>5</div></Link>
-          <Link href={handleDayClick(6)}><div>6</div></Link>
-          <Link href={handleDayClick(7)}><div>7</div></Link>
-          <Link href={handleDayClick(8)}><div>8</div></Link>
-          <Link href={handleDayClick(9)}><div>9</div></Link>
-          <Link href={handleDayClick(10)}><div className="current-day">10</div></Link>
-          <Link href={handleDayClick(11)}><div>11</div></Link>
-          <Link href={handleDayClick(12)}><div>12</div></Link>
-          <Link href={handleDayClick(13)}><div>13</div></Link>
-          <Link href={handleDayClick(14)}><div>14</div></Link>
-          <Link href={handleDayClick(15)}><div>15</div></Link>
-          <Link href={handleDayClick(16)}><div>16</div></Link>
-          <Link href={handleDayClick(17)}><div>17</div></Link>
-          <Link href={handleDayClick(18)}><div>18</div></Link>
-          <Link href={handleDayClick(19)}><div>19</div></Link>
-          <Link href={handleDayClick(20)}><div>20</div></Link>
-          <Link href={handleDayClick(21)}><div>21</div></Link>
-          <Link href={handleDayClick(22)}><div>22</div></Link>
-          <Link href={handleDayClick(23)}><div>23</div></Link>
-          <Link href={handleDayClick(24)}><div>24</div></Link>
-          <Link href={handleDayClick(25)}><div>25</div></Link>
-          <Link href={handleDayClick(26)}><div>26</div></Link>
-          <Link href={handleDayClick(27)}><div>27</div></Link>
-          <Link href={handleDayClick(28)}><div>28</div></Link>
-          <Link href={handleDayClick(29)}><div>29</div></Link>
-          <Link href={handleDayClick(30)}><div>30</div></Link>
-          <Link href={handleDayClick(31)}><div>31</div></Link>
-          <Link href={handleDayClick(1)}><div className="not-current-m">1</div></Link>
-          <Link href={handleDayClick(2)}><div className="not-current-m">2</div></Link>
-          <Link href={handleDayClick(3)}><div className="not-current-m">3</div></Link>
-          <Link href={handleDayClick(4)}><div className="not-current-m">4</div></Link>
-          <Link href={handleDayClick(5)}><div className="not-current-m">5</div></Link>
+          <Link href="/addworkout"><div className="not-current-m">26</div></Link>
+          <Link href="/addworkout"><div className="not-current-m">27</div></Link>
+          <Link href="/addworkout"><div className="not-current-m">28</div></Link>
+          <Link href="/addworkout"><div className="not-current-m">29</div></Link>
+          <Link href="/addworkout"><div className="not-current-m">30</div></Link>
+          <Link href="/addworkout"><div>1</div></Link>
+          <Link href="/addworkout"><div>2</div></Link>
+          <Link href="/addworkout"><div>3</div></Link>
+          <Link href="/addworkout"><div>4</div></Link>
+          <Link href="/addworkout"><div>5</div></Link>
+          <Link href="/addworkout"><div>6</div></Link>
+          <Link href="/addworkout"><div>7</div></Link>
+          <Link href="/addworkout"><div>8</div></Link>
+          <Link href="/addworkout"><div>9</div></Link>
+          <Link href="/addworkout"><div className="current-day">10</div></Link>
+          <Link href="/addworkout"><div>11</div></Link>
+          <Link href="/addworkout"><div>12</div></Link>
+          <Link href="/addworkout"><div>13</div></Link>
+          <Link href="/addworkout"><div>14</div></Link>
+          <Link href="/addworkout"><div>15</div></Link>
+          <Link href="/addworkout"><div>16</div></Link>
+          <Link href="/addworkout"><div>17</div></Link>
+          <Link href="/addworkout"><div>18</div></Link>
+          <Link href="/addworkout"><div>19</div></Link>
+          <Link href="/addworkout"><div>20</div></Link>
+          <Link href="/addworkout"><div>21</div></Link>
+          <Link href="/addworkout"><div>22</div></Link>
+          <Link href="/addworkout"><div>23</div></Link>
+          <Link href="/addworkout"><div>24</div></Link>
+          <Link href="/addworkout"><div>25</div></Link>
+          <Link href="/addworkout"><div>26</div></Link>
+          <Link href="/addworkout"><div>27</div></Link>
+          <Link href="/addworkout"><div>28</div></Link>
+          <Link href="/addworkout"><div>29</div></Link>
+          <Link href="/addworkout"><div>30</div></Link>
+          <Link href="/addworkout"><div>31</div></Link>
+          <Link href="/addworkout"><div className="not-current-m">1</div></Link>
+          <Link href="/addworkout"><div className="not-current-m">2</div></Link>
+          <Link href="/addworkout"><div className="not-current-m">3</div></Link>
+          <Link href="/addworkout"><div className="not-current-m">4</div></Link>
+          <Link href="/addworkout"><div className="not-current-m">5</div></Link>
         </div>
       </div>
       <button className="add-workout">
