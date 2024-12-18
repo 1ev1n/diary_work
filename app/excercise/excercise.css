@@ -1,69 +1,139 @@
-.exercise-card {
-    width: 120px;
-    height: 120px;
-    background-size: cover;
-    background-position: center;
-    border-radius: 10px;
-    overflow: hidden;
+
+.frame {
     position: relative;
-}
-
-.exercise-text {
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    color: white;
-    font-weight: bold;
-}
-
-.exercise-card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, rgba(107, 90, 242, 0.6), rgba(107, 90, 242, 0));
-    z-index: 99;
-}
+    min-height: 100vh;
+    background: #2d2d2d;
+    font-family: 'Jost', sans-serif;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-.exercise-image {
+  .back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+  }
+  
+  .back-button img {
     width: 100%;
-    max-height: 300px;
+    height: auto;
+  }
+  
+  .img-grad {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(
+      180deg,
+      #2d2d2d 0%,
+      rgba(45, 45, 45, 0.5) 34.9%,
+      rgba(45, 45, 45, 0.25) 56.9%,
+      rgba(45, 45, 45, 0) 76.4%
+    );
     margin-bottom: 20px;
-    border-radius: 0;
-}
-
-.exercise-title {
-    font-size: 1.8em;
-    margin-bottom: 10px;
-    font-weight: bold;
-}
-
-.exercise-description, .technique-description {
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
-
-.muscle-groups {
+  }
+  
+  .exercise-image {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  /* Блок характеристик */
+  .stats {
     display: flex;
     justify-content: space-around;
+    width: 100%;
+    max-width: 800px;
+    margin: 20px 0;
+  }
+  
+  .stat {
+    display: flex;
     align-items: center;
+    gap: 10px;
+  }
+  
+  .stat img {
+    width: 40px;
+    height: 40px;
+  }
+  
+  /* Контейнер с основной информацией */
+  .container-mini {
+    max-width: 800px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+  }
+  
+  /* Название упражнения */
+  .exercise-title {
+    font-size: 40px;
+    font-weight: 600;
     margin-bottom: 20px;
-}
-
-.muscle-image {
-    width: 150px;
-    height: auto;
-}
-
-.muscle-groups ul {
-    list-style: disc;
-    padding-left: 20px;
-}
-
-.technique-title {
-    font-size: 1.5em;
+  }
+  
+  /* Описание упражнения */
+  .exercise-description {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  /* Группы мышц */
+  .muscle-groups {
+    margin-top: 20px;
+  }
+  
+  .muscle-title {
+    font-size: 24px;
+    font-weight: 500;
     margin-bottom: 10px;
-    font-weight: bold;
-}
+  }
+  
+  .muscle-groups ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .muscle-groups li {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+  
+  .muscle-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    margin-top: 20px;
+    border-radius: 10px;
+  }
+  
+  /* Техника выполнения */
+  .technique-title {
+    font-size: 24px;
+    font-weight: 500;
+    margin-top: 20px;
+  }
+  
+  .technique-description {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-top: 10px;
+  }
+  

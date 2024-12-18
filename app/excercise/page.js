@@ -5,18 +5,21 @@ import './/excercise.css';
 
 export default function Exercise() {
   return (
-    <div className="container-disc">
+    <div className="frame">
       {/* Кнопка назад */}
+
       <Link href="/trains" className="back-button">
         <img src="/icons/arrow_back.png" alt="Назад" />
       </Link>
 
       {/* Изображение упражнения */}
-      <img
-        src="/images/zhim.png"
-        alt="Жим Лёжа"
-        className="exercise-image"
-      />
+      <div className="img-grad">
+        <img
+          src="/images/zhim.png"
+          alt="Жим Лёжа"
+          className="exercise-image"
+        />
+      </div>
 
       {/* Основные характеристики */}
       <div className="stats">
