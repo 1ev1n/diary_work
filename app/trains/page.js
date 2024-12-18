@@ -4,7 +4,7 @@ import './/trains.css';
 
 export default function Trains() {
   return (
-    <div className="container">
+    <div className="frame">
       <h1 className="title">ДНЕВНИК КАЧКА</h1>
       <div className="scroll-container">
         <Link href="/excercise">

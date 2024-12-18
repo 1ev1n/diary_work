@@ -1,9 +1,21 @@
 import { db } from '@/app/lib/db';
 import { NextResponse } from 'next/server';
 
-export async function GET() {
+// Получение всех тренировок
+export async function GET(req) {
     try {
-        const result = await db('SELECT * FROM "Workout"');
+        const searchParams = req.nextUrl.searchParams;
+        const date = searchParams.get('date'); // Получаем дату из запроса
+
+        let query = 'SELECT * FROM "Workout"';
+        const params = [];
+
+        if (date) {
+            query += ' WHERE date = $1';
+            params.push(date);
+        }
+
+        const result = await db(query, params);
         return NextResponse.json(result);
     } catch (error) {
         console.error('Error fetching workouts:', error);
@@ -11,6 +23,7 @@ export async function GET() {
     }
 }
 
+// Создание новой тренировки
 export async function POST(req) {
     try {
         const { user_id, date, description, name_workout } = await req.json();
