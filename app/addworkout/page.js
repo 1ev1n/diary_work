@@ -112,7 +112,7 @@ export default function AddWorkoutPage() {
                       />
                     </div>
                     <div>
-                      <label>Date:</label>
+                      <label>Дата:</label>
                       <input
                           type="date"
                           name="date"
@@ -123,7 +123,7 @@ export default function AddWorkoutPage() {
                       />
                     </div>
                     <div>
-                      <label>Description:</label>
+                      <label>Название:</label>
                       <input
                           type="text"
                           name="description"
@@ -147,9 +147,6 @@ export default function AddWorkoutPage() {
                       Добавить тренировку
                     </button>
                   </form>
-                  <button className={styles.clearButton} onClick={closeModal}>
-                    Закрыть
-                  </button>
                 </div>
               </div>
           )}
