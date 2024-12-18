@@ -60,41 +60,44 @@ export default function AddWorkoutPage() {
   };
 
   return (
-      <div className={styles.container}>
-        <h1 className={styles.title}>ДНЕВНИК КАЧКА</h1>
-        <div className={styles.containerBackground}>
+      <div className="frame">
+
+        <h1 className="title">ДНЕВНИК КАЧКА</h1>
+
+        <div className="container">
+          
           {/* Заголовок страницы */}
-          <div className={styles.newTrainHeader}>
+          <div className="header">
             <a href="/calendar">
-              <img src="/icons/arrow_back.png" className={styles.backArrow} alt="Назад" />
+              <img src="/icons/arrow_back.png" className="back-arrow-icon" alt="Назад" />
             </a>
-            <h2 className={styles.date}>10 Ноября, 2024</h2>
+            <h2 className="header-date">10 Ноября, 2024</h2>
           </div>
 
           {/* Сообщение об успехе/ошибке вне модального окна */}
           {message && <p className={styles.message}>{message}</p>}
 
-          {/* Кнопка добавления упражнения */}
-          <span className={styles.addExercise} onClick={openModal}>
-          <img src="/icons/cross.png" alt="" /> Добавить упражнение
-        </span>
-
           {/* Список упражнений */}
-          <div className={`${styles.scrollContainer} ${styles.exerciseList}`}>
+          <div className="scroll-container">
             {["Жим лёжа", "Бицепс", "Ягодичный мост"].map((exerciseName, index) => (
-                <div key={index} className={styles.exerciseItem}>
+                <div key={index} className="excercise-item">
                   <div className={styles.exerciseName}>{exerciseName}</div>
-                  <div className={styles.removeButton}>
+                  <div className="remove-button">
                     <img src="/icons/cross.png" alt="Удалить" />
                   </div>
                 </div>
             ))}
           </div>
 
+          {/* Кнопка добавления упражнения */}
+          <span className="add-excercise" onClick={openModal}>
+            <img src="/icons/plus.png" alt="" /> Добавить упражнение
+          </span>
+
           {/* Модальное окно с формой */}
           {isModalOpen && (
-              <div className={styles.modal} onClick={closeModal}>
-                <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
+              <div className="modal" onClick={closeModal}>
+                <div className="modalContent" onClick={(e) => e.stopPropagation()}>
                   <h2>Добавить тренировку</h2>
                   <form onSubmit={handleSubmit}>
                     <div>
@@ -105,7 +108,7 @@ export default function AddWorkoutPage() {
                           value={formData.user_id}
                           onChange={handleChange}
                           required
-                          className={styles.inputField}
+                          className="inputField"
                       />
                     </div>
                     <div>
@@ -116,7 +119,7 @@ export default function AddWorkoutPage() {
                           value={formData.date}
                           onChange={handleChange}
                           required
-                          className={styles.inputField}
+                          className="inputField"
                       />
                     </div>
                     <div>
@@ -126,7 +129,7 @@ export default function AddWorkoutPage() {
                           name="description"
                           value={formData.description}
                           onChange={handleChange}
-                          className={styles.inputField}
+                          className="inputField"
                       />
                     </div>
                     <div>
@@ -137,10 +140,10 @@ export default function AddWorkoutPage() {
                           value={formData.name_workout}
                           onChange={handleChange}
                           required
-                          className={styles.inputField}
+                          className="inputField"
                       />
                     </div>
-                    <button type="submit" className={styles.saveButton}>
+                    <button type="submit" className="saveButton">
                       Добавить тренировку
                     </button>
                   </form>
@@ -152,9 +155,9 @@ export default function AddWorkoutPage() {
           )}
 
           {/* Кнопки "Очистить" и "Сохранить" */}
-          <div className={styles.buttonsContainer}>
-            <button className={styles.clearButton}>Очистить</button>
-            <button className={styles.saveButton}>Сохранить</button>
+          <div className="buttons-container">
+            <button className="clear-button">Очистить</button>
+            <button className="save-button">Сохранить</button>
           </div>
         </div>
       </div>

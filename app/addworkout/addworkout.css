@@ -1,179 +1,264 @@
 /* Общие стили страницы */
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #2D2D2D;
-  font-family: 'Jost', sans-serif;
-  color: #FFFFFF;
-}
 
 .container {
-  position: relative;
-  width: 1227px;
-  height: 2556px;
-  margin: 0 auto;
-  background: #2D2D2D;
-}
-
-/* Основной фон */
-.containerBackground {
+  width: 90%;
+  max-width: 1000px;
+  background-color: #4D4D4D;
   position: absolute;
-  width: 1083px;
-  height: 1958px;
-  left: calc(50% - 1083px / 2);
-  top: calc(50% - 1958px / 2 + 119px);
-  background: #4D4D4D;
+  height: 75%;
+  bottom: 15vh;
+  top: 16vh;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
   border-radius: 40px;
 }
 
-/* Градиентный фон внизу */
-.containerBackground::after {
-  content: '';
+
+.header {
   position: absolute;
-  width: 1083px;
-  height: 627px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10%;
+  background: linear-gradient(180deg, #D400F1 0%, #9C06F7 37.4%, #6B0BFD 91.4%);
+  border-radius: 40px 40px 0px 0px;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+
+.back-arrow-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4vh;
+  height: 4vh;
+  object-fit: contain;
+}
+
+
+.header-date {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 30vw;
+  font-size: 3vh;
+  line-height: 30px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+
+.buttons-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.clear-button, .save-button {
+  font-family: 'Jost', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  color: #FFFFFF;
+  padding: 10px 20px;
+  border-radius: 40px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 90%;
+}
+
+.clear-button {
+  background: rgba(255, 255, 255, 0.1);
+  border: 5px solid #FFFFFF;
+  backdrop-filter: blur(10px);
+}
+
+.save-button {
+  background: #9C06F7;
+  border-radius: 40px;
+}
+
+
+.buttons-container {
+  position: absolute;
+  width: 100%;
+  height: auto;
   left: 0;
   bottom: 0;
   background: linear-gradient(180deg, rgba(156, 6, 247, 0) 0%, rgba(156, 6, 247, 0.25) 70.4%, rgba(156, 6, 247, 0.5) 100%);
   border-radius: 0px 0px 40px 40px;
-}
-
-/* Заголовок страницы */
-.title {
-  text-align: center;
-  font-size: 65px;
-  font-weight: 600;
-  margin: 20px 0;
-}
-
-.newTrainHeader {
+  padding: 20px 30px;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  margin: 20px;
 }
 
-.backArrow {
-  width: 52px;
-  height: 52px;
-  cursor: pointer;
-}
-
-.date {
-  margin-left: 20px;
-  font-size: 32px;
-}
-
-/* Стили для кнопок "Добавить цель" и "Добавить упражнение" */
-.addGoal,
-.addExercise {
-  display: flex;
-  align-items: center;
-  font-size: 30px;
-  cursor: pointer;
-  margin: 20px;
-}
-
-.addGoal img,
-.addExercise img {
-  width: 52px;
-  height: 52px;
-  margin-right: 10px;
-}
-
-/* Список упражнений */
-.exerciseList {
-  overflow-y: auto;
-  max-height: 600px;
-  margin: 20px;
-}
-
-.exerciseItem {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.scroll-container {
   background-color: #6D6D6D;
-  border-radius: 20px;
-  margin-bottom: 10px;
-  padding: 15px 20px;
-}
-
-.exerciseName {
-  font-size: 28px;
-}
-
-.removeButton img {
-  width: 52px;
-  height: 52px;
-  cursor: pointer;
-}
-
-/* Стили кнопок очистки и сохранения */
-.buttonsContainer {
+  width: 90%;
+  height: 40%;
+  margin: 0 auto;
   display: flex;
-  justify-content: space-around;
-  margin: 50px 0;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  overflow-y: auto;
 }
 
-.clearButton,
-.saveButton {
-  width: 944px;
-  height: 120px;
+.parent-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+.scroll-container {
+  background-color: #6D6D6D; 
+  width: 90%;
+  height: 40%;
+  bottom: 2vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  flex-direction: column;
+}
+
+
+.add-excercise {
+  background-color: #4D4D4D;
+  padding: 10px 20px;
+  font-family: 'Jost', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #FFFFFF;
   border-radius: 40px;
-  font-size: 40px;
-  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 90%;
+}
+
+.add-excercise img {
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+}
+
+.remove-button {
+  position: absolute;
+  right: -120px;
+  top: 25px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
 }
 
-.clearButton {
-  background: rgba(255, 255, 255, 0.1);
-  border: 5px solid #FFFFFF;
-  color: #FFFFFF;
+.remove-button img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
-.saveButton {
-  background: #9C06F7;
+.excercise-item {
+  box-sizing: border-box;
+  border: 3px solid #FFFFFF;
+  border-radius: 40px;
+  top: 1vh;
+  position: relative;
+  width: 85%;
+  font-family: 'Jost', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 4vw;
   color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  margin-bottom: 10px;
 }
 
-/* Модальное окно */
+.excercise-item > * {
+  width: calc(100% - 20px);
+  margin-bottom: 10px;
+}
+
+
 .modal {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1000;
+  padding: 20px;
+  box-sizing: border-box;
 }
+
 
 .modalContent {
-  background: #6D6D6D;
-  border-radius: 40px;
-  padding: 40px;
+  background-color: #6D6D6D;
+  border-radius: 15px;
+  padding: 30px;
+  width: 90%;
+  max-width: 500px;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  align-items: stretch;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
 }
 
+.modalContent h2 {
+  font-family: 'Jost', sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  color: #fff;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Входные поля (input) */
 .inputField {
-  width: 100%;
   padding: 10px;
-  border: 3px solid #FFFFFF;
-  border-radius: 20px;
-  background: transparent;
-  color: #FFFFFF;
-  font-size: 18px;
+  margin: 10px 0 20px 0;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #333;
+  outline: none;
+  transition: border-color 0.3s ease;
 }
 
-.inputField::placeholder {
-  color: rgba(255, 255, 255, 0.5);
-}
-
-/* Элементы с изображением "крест" */
-img[src*="cross.png"] {
-  width: 52px;
-  height: 52px;
-  cursor: pointer;
+.inputField:focus {
+  border-color: #4D4D4D;
 }

@@ -29,11 +29,11 @@
   box-sizing: border-box;
   overflow: hidden;
   background-color: #2D2D2D;
+  display: flex;
 }
 
 .frame * {
   max-width: 100vh;
-  max-height: 100vw;
   box-sizing: border-box;
   overflow: hidden;
 }
