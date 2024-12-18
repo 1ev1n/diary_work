@@ -1,232 +1,153 @@
-/* Общий фон */
-body {
-    background-color: #2D2D2D;
-    color: white;
-    font-family: 'Jost', sans-serif;
+
+.calendar {
+    width: 90%;
+    max-width: 1000px;
+    height: 0;
+    padding-bottom: 90%;
+    background-color: #4D4D4D;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0;
-    min-height: 100vh;
-    overflow-x: hidden; /* Убираем горизонтальную прокрутку */
-}
-
-/* Основной контейнер календаря */
-.calendar-container {
-    position: relative;
-    width: 100%; /* Адаптивная ширина */
-    max-width: 1080px; /* Максимальная ширина */
-    aspect-ratio: 1 / 1; /* Делаем контейнер квадратным */
-    background: #4D4D4D;
+    z-index: 1;
     border-radius: 40px;
-    padding: 20px;
-    box-sizing: border-box;
-    margin-bottom: 0; /* Убираем лишний отступ снизу */
-    padding-bottom: 0;
-}
+  }
+  
+  @media (max-width: 768px) {
+    .calendar {
+      width: 95%;
+      padding-bottom: 95%;
+    }
+  }
+  
 
-/* Шапка календаря */
+
 .calendar-header {
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 20%; /* Примерно 20% высоты контейнера */
+    height: 22%;
     background: linear-gradient(180deg, #D400F1 0%, #9C06F7 37.4%, #6B0BFD 91.4%);
     border-radius: 40px 40px 0px 0px;
     display: flex;
     justify-content: space-between;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+
+  .month {
+    position: absolute;
+    top: 0;
+    left: 60%;
+    transform: translateX(-80%);
+    width: 80%;
+    height: 60px;
+    font-family: 'Jost';
+    font-weight: 700;
+    font-size: 7vw;
+    line-height: 94px;
+    display: flex;
     align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
     padding: 0 20px;
     box-sizing: border-box;
-}
+  }
 
-/* Название месяца и года */
-.calendar-header .month-year {
-    font-size: 3vw; /* Относительный размер шрифта */
-    font-weight: 700;
-    color: #FFFFFF;
-    text-align: center;
-}
-
-/* Кнопки навигации */
-.calendar-header .arrow {
-    width: 50px;
-    height: 50px;
-    background: #FFFFFF;
-    border-radius: 5px;
+  .calendar-header img {
+    width: 20px;
+    height: auto;
+    margin-left: 10px;
+  }
+  
+  .calendar-icon {
+    position: absolute;
+    top: 0;
+    right: 5%;
+    width: 60px;
+    height: 60px;
     display: flex;
-    justify-content: center;
     align-items: center;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.calendar-header .arrow:hover {
-    background-color: #D9D9D9;
-}
-
-.calendar-header .arrow.left {
-    transform: rotate(180deg);
-}
-
-/* Дни недели */
-.calendar-weekdays {
-    display: flex;
-    justify-content: space-around;
-    margin: 20px 0;
-    font-size: 2vw;
+    justify-content: center;
+  }
+  
+  .calendar-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  
+  .calendar-weekdays {
+    position: absolute;
+    bottom: 2%;
+    width: 93%;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    justify-items: center;
+    align-items: center;
+    font-family: 'Jost';
+    font-style: normal;
     font-weight: 500;
+    font-size: 4vw;
+    line-height: 20px;
     color: #FFFFFF;
-}
+  }
+  
+  .calendar-weekdays div {
+    text-align: center;
+    width: 100%;
+    padding: 5px;
+  }
+  
 
 /* Дни календаря */
 .calendar-days {
+    position: absolute;
+    top: 26%;
+    width: 95%;
+    height: calc(100% - 60px - 75px);
     display: grid;
-    grid-template-columns: repeat(7, 1fr); /* 7 колонок */
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(5, 1fr);
     gap: 10px;
-    justify-content: center;
+    justify-items: center;
     align-items: center;
-}
+    padding: 10px;
+  }
 
-/* Стиль для ячейки дня */
+
+  .calendar-day.glow {
+    background: rgba(107, 11, 253, 0.5);
+  }
+
 .calendar-days div {
-    width: 100%; /* Адаптивный размер */
-    aspect-ratio: 1 / 1; /* Сохраняем круглую форму */
-    font-size: 1.5vw;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    font-size: 4vw;
     text-align: center;
     border-radius: 50%;
-    background-color: #555;
     color: #FFFFFF;
     cursor: pointer;
     transition: background-color 0.3s;
-    line-height: 100%; /* Центрирование текста */
+    line-height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* Дни из другого месяца */
 .calendar-days .not-current-m {
     color: #8F8F8F;
 }
 
-/* Наведение мыши на день */
 .calendar-days div:hover {
     background-color: #6B5AF2;
 }
 
-/* Текущий день */
 .calendar-days .current-day {
     background-color: #6B5AF2;
 }
-
-/* Кнопка добавления тренировки */
-.add-workout {
-    width: 35%;
-    margin: 20px auto 0;
-    background-color: #333;
-    color: white;
-    border: none;
-    padding: 15px 20px;
-    border-radius: 10px;
-    font-size: 20px;
-    font-weight: 600;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-
-.add-workout:hover {
-    background-color: #D9D9D9;
-    color: #333;
-}
-
-/* Иконка плюса */
-.add-workout .plus {
-    font-size: 1.5em;
-    margin-right: 10px;
-}
-
-/* Градиент сайдбара */
-.sidebar-gradient {
-    position: absolute;
-    width: 100%;
-    height: 100px;
-    bottom: 0;
-    left: 0;
-    background: linear-gradient(360deg, #4D4D4D 0%, rgba(77, 77, 77, 0.5) 37.24%, rgba(77, 77, 77, 0) 100%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-}
-
-/* Иконки внизу */
-.sidebar-gradient .icon {
-    width: 60px;
-    height: 60px;
-    background-color: #D9D9D9;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 0.3s;
-}
-
-.sidebar-gradient .icon img {
-    width: 40px;
-    height: 40px;
-}
-
-.sidebar-gradient .icon:hover {
-    background-color: #6B5AF2;
-}
-
-/* Градиент сайдбара */
-.sidebar-gradient {
-    position: absolute;
-    width: 100%;
-    height: 100px;
-    bottom: 0;
-    left: 0;
-    background: linear-gradient(360deg, #4D4D4D 0%, rgba(77, 77, 77, 0.5) 37.24%, rgba(77, 77, 77, 0) 100%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-}
-
-/* Иконки внизу */
-.sidebar-gradient .icon {
-    width: 100px; /* Базовый размер */
-    height: 100px; /* Базовый размер */
-    max-width: 270px; /* Ограничение максимального размера */
-    max-height: 270px; /* Ограничение максимального размера */
-    background-color: #D9D9D9;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 0.3s;
-}
-
-.sidebar-gradient .icon img {
-    width: 70%;
-    height: 70%;
-    object-fit: contain; /* Подгоняем изображение, сохраняя пропорции */
-}
-
-.sidebar-gradient .icon:hover {
-    background-color: #6B5AF2;
-}
-
-.glow {
-    background-color: #00ff00;
-    color: white;
-    font-weight: bold;
-    border-radius: 50%;
-    box-shadow: 0 0 10px 2px #00ff00;
-}
-
