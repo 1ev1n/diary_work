@@ -55,58 +55,26 @@ body {
     z-index: 1;
   }
   
-
-  .scrollbar {
-    position: fixed;
-    top: 423px;
-    right: 15px;
-    width: 15px;
-    height: calc(100% - 423px);
-    border-radius: 20px;
-    background: rgba(77, 77, 77, 0.3);
+  .scroll-container {
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    overflow-y: auto;
+    padding: 20px;
   }
+  
+  
   
   .scrollbar-thumb {
     width: 100%;
     height: 25%;
     background: linear-gradient(180deg, #6B0BFD 0%, #D400F1 100%);
     border-radius: 20px;
-  }
-  
-
-  .sidebar-gradient {
-    position: absolute;
-    width: 100%;
-    height: 100px;
-    bottom: 0;
-    left: 0;
-    background: linear-gradient(360deg, #4D4D4D 0%, rgba(77, 77, 77, 0.5) 37.24%, rgba(77, 77, 77, 0) 100%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-  }
-
-  .sidebar-gradient .icon {
-    width: 100px;
-    height: 100px;
-    max-width: 270px;
-    max-height: 270px;
-    background-color: #D9D9D9;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 0.3s;
-  }
-  
-  .sidebar-gradient .icon img {
-    width: 70%;
-    height: 70%;
-    object-fit: contain;
-  }
-  
-  .sidebar-gradient .icon:hover {
-    background-color: #6B5AF2;
   }
   

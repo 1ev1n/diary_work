@@ -5,7 +5,9 @@ import './/trains.css';
 export default function Trains() {
   return (
     <div className="frame">
+
       <h1 className="title">ДНЕВНИК КАЧКА</h1>
+
       <div className="scroll-container">
         <Link href="/excercise">
             <div
@@ -82,13 +84,17 @@ export default function Trains() {
       </div>
 
       <div className="sidebar-gradient">
-        <Link href="/calendar" className="icon">
-          <img src="/icons/calendar.png" alt="Calendar" />
-        </Link>
-        <Link href="/trains" className="icon">
-          <img src="/icons/excercises.png" alt="Trainings" />
-        </Link>
-      </div>
+            <div className="chosen-gradient">
+              <Link href="/trains" className="icon">
+                <img src="/icons/excercises.png" alt="Trainings" className='side-icon'/>
+              </Link>
+            </div>
+            <div className="not-chosen-gradient">
+              <Link href="/calendar" className="icon">
+                <img src="/icons/calendar.png" alt="Calendar" className='side-icon'/>
+              </Link>
+            </div>
+        </div>
     </div>
   );
 }
