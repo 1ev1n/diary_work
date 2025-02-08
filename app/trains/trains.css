@@ -1,80 +1,45 @@
 body {
-    background-color: #2D2D2D;
-    margin: 0;
-    font-family: 'Jost', sans-serif;
-  }
-  
-  .exercise-page {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-    max-width: 960px;
-    margin: 50px auto;
-    padding-bottom: 100px;
-    justify-items: center;
-    overflow-y: auto;
-    max-height: calc(100vh - 250px);
-  }
-  
- 
-  .exercise-card {
-    position: relative;
-    width: 100%;
-    max-width: 450px;
-    height: 470px;
-    background-size: cover;
-    background-position: center;
-    border-radius: 40px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin: 0 auto;
-  }
-  
-  .exercise-card::after {
+  background-color: #2D2D2D;
+  margin: 0;
+  font-family: 'Jost', sans-serif;
+}
 
-    position: absolute;
-    width: 475px;
-    height: 410px;
-    left: 92px;
-    top: 423px;
+.exercise-page {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  max-width: 960px;
+  margin: 50px auto;
+  padding-bottom: 100px;
+  justify-items: center;
+  overflow-y: auto;
+  max-height: calc(100vh - 250px);
+}
 
-    background: linear-gradient(180deg, rgba(26, 26, 26, 0.6) 0%, rgba(107, 11, 253, 0.6) 100%);
-    border-radius: 40px;
+.scroll-container {
+  position: absolute;
+  width: 90%;
+  left: 50%;
+  transform: translateX(-50%);
+  top: calc(60px + 3rem);
+  height: calc(100vh - 50px - 15% - 2rem);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  overflow-y: auto;
+  padding: 20px;
+}
 
-  }
-  
+.scroll-container > * {
+  flex: 0 1 calc(50% - 10px);
+  max-width: calc(50% - 10px);
+}
 
-  .exercise-card-title {
-    position: absolute;
-    bottom: 20px;
-    width: 100%;
-    text-align: center;
-    font-size: 36px;
-    color: #FFFFFF;
-    font-weight: 500;
-    z-index: 1;
-  }
-  
-  .scroll-container {
-    position: absolute;
-    width: 80%;
-    height: 80%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    overflow-y: auto;
-    padding: 20px;
-  }
-  
-  
-  
-  .scrollbar-thumb {
-    width: 100%;
-    height: 25%;
-    background: linear-gradient(180deg, #6B0BFD 0%, #D400F1 100%);
-    border-radius: 20px;
-  }
-  
+
+.scrollbar-thumb {
+  width: 100%;
+  height: 25%;
+  background: linear-gradient(180deg, #6B0BFD 0%, #D400F1 100%);
+  border-radius: 20px;
+}

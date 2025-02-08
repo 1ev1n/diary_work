@@ -1,0 +1,31 @@
+.exercise-card {
+    position: relative;
+    width: 40vw;
+    height: 40vw;
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.exercise-card::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(26, 26, 26, 0.6) 0%, rgba(107, 11, 253, 0.6) 100%);
+    border-radius: 20px;
+}
+
+.exercise-text {
+    position: relative;
+    font-size: 24px;
+    color: #FFFFFF;
+    font-weight: 500;
+    z-index: 1;
+}

@@ -1,0 +1,132 @@
+.calendar {
+    width: 90%;
+    max-width: 95vw;
+    height: 10;
+    padding-bottom: 90%;
+    background-color: #4D4D4D;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    max-height: 100vh;
+}
+
+.calendar-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10vh;
+    max-height: 30%;
+    background: linear-gradient(180deg, #D400F1 0%, #9C06F7 37.4%, #6B0BFD 91.4%);
+    border-radius: 20px 20px 0px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2vw 4vw;
+    box-sizing: border-box;
+}
+
+
+.calendar-header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.month {
+    font-family: 'Jost', sans-serif;
+    font-weight: 700;
+    font-size: min(5vw, 50px);
+    line-height: 1.5;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    flex: 1;
+    min-width: 0;
+}
+
+.month img {
+    height: 0.6em;
+    margin-left: 10px;
+}
+
+.calendar-icon {
+    width: min(10vw, 60px);
+    height: auto;
+    max-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1;
+}
+
+
+
+.calendar-weekdays {
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    justify-items: center;
+    align-items: center;
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 4vw;
+    line-height: 20px;
+    color: #FFFFFF;
+    padding: 15px 0;
+    box-sizing: border-box;
+}
+
+
+.calendar-days {
+    position: absolute;
+    top: 22%;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 22%);
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 10px;
+    justify-items: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.calendar-day.not-current-month {
+    color: #8F8F8F;
+}
+
+.calendar-day {
+    font-size: 4vw;
+    text-align: center;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calendar-day.today {
+    background-color: #6B5AF2;
+}
+
+.calendar-day:hover {
+    background-color: #6B5AF2;
+}
+
+.calendar-day.glow {
+    background: rgba(107, 11, 253, 0.5);
+}

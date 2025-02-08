@@ -1,15 +1,17 @@
-
 .frame {
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-    background: #2d2d2d;
-    font-family: 'Jost', sans-serif;
-    color: #ffffff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #2d2d2d;
+  font-family: 'Jost', sans-serif;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
 
   .back-button {
     position: absolute;
